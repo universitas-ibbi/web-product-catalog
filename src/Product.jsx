@@ -25,16 +25,25 @@ export default function Product(props){
 
                 <div className="d-flex justify-content-between mb-2">
                     <p className="text-muted mb-0">Available: <span className="fw-bold">{props.stock}</span></p>
-                    <div className="ms-auto text-warning">
-                    <i className="fa fa-star"></i>
-                    <i className="fa fa-star"></i>
-                    <i className="fa fa-star"></i>
-                    <i className="fa fa-star"></i>
-                    <i className="fa fa-star"></i>
-                    </div>
+                    <Star rating={props.rating} />
                 </div>
                 </div>
             </div>
             </div>
+    )
+}
+
+function Star(props){
+    return (
+        <div className="ms-auto text-warning">
+            {[...Array(5)].map((star, index) => {
+                index += 1;
+                return (
+                    <span key={index}>
+                        <i className={index <= props.rating ? "fas fa-star" : "far fa-star"}></i>
+                    </span>
+                )
+            })}
+        </div>
     )
 }

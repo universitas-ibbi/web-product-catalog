@@ -9,7 +9,8 @@ export default function App(){
       productName: "HP Notebook",
       priceBefore: "1099",
       priceAfter: "999",
-      stock: "9"
+      stock: "9",
+      rating: "5"
     },
     {
       offer: "x2",
@@ -18,7 +19,8 @@ export default function App(){
       productName: "HP Envy",
       priceBefore: "1199",
       priceAfter: "1099",
-      stock: "7"
+      stock: "7",
+      rating: "4"
     },
     {
       offer: "x3",
@@ -27,7 +29,8 @@ export default function App(){
       productName: "Toshiba B77",
       priceBefore: "1399",
       priceAfter: "1299",
-      stock: "5"
+      stock: "5",
+      rating: "3"
     }
   ];
 
@@ -46,6 +49,7 @@ export default function App(){
                 priceBefore={product.priceBefore}
                 priceAfter={product.priceAfter}
                 stock={product.stock}
+                rating={product.rating}
               />
             );
           })}
