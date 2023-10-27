@@ -5,7 +5,7 @@ import { products } from "./data";
 
 export default function App(){
   return (
-    <section style={{ backgroundColor: "#eee" }}>
+    <section>
       <div className="container py-5">
         <div className="row">
           {products.map((product, index) => {
