@@ -1,39 +1,9 @@
 import Product from "./Product";
+import ProductPage from "./ProductPage";
+
+import { products } from "./data";
 
 export default function App(){
-  const products = [
-    {
-      offer: "x4",
-      image: "https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/4.webp",
-      type: "Laptops",
-      productName: "HP Notebook",
-      priceBefore: "1099",
-      priceAfter: "999",
-      stock: "9",
-      rating: "5"
-    },
-    {
-      offer: "x2",
-      image: "https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/7.webp",
-      type: "Laptops",
-      productName: "HP Envy",
-      priceBefore: "1199",
-      priceAfter: "1099",
-      stock: "7",
-      rating: "4"
-    },
-    {
-      offer: "x3",
-      image: "https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/5.webp",
-      type: "Laptops",
-      productName: "Toshiba B77",
-      priceBefore: "1399",
-      priceAfter: "1299",
-      stock: "5",
-      rating: "3"
-    }
-  ];
-
   return (
     <section style={{ backgroundColor: "#eee" }}>
       <div className="container py-5">
@@ -42,6 +12,7 @@ export default function App(){
             return (
               <Product
                 key={index}
+                id={product.id}
                 offer={product.offer}
                 image={product.image}
                 type={product.type}

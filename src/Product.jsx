@@ -1,3 +1,7 @@
+import { Link } from 'react-router-dom';
+
+import Star from './Star.jsx';
+
 export default function Product(props){
     return (
         <div className="col-md-12 col-lg-4 mb-4 mb-lg-0">
@@ -19,7 +23,9 @@ export default function Product(props){
                 </div>
 
                 <div className="d-flex justify-content-between mb-3">
-                    <h5 className="mb-0">{props.productName}</h5>
+                    <Link to={`product/${props.id}`}>
+                        <h5 className="mb-0">{props.productName}</h5>
+                    </Link>
                     <h5 className="text-dark mb-0">${props.priceAfter}</h5>
                 </div>
 
@@ -33,17 +39,3 @@ export default function Product(props){
     )
 }
 
-function Star(props){
-    return (
-        <div className="ms-auto text-warning">
-            {[...Array(5)].map((star, index) => {
-                index += 1;
-                return (
-                    <span key={index}>
-                        <i className={index <= props.rating ? "fas fa-star" : "far fa-star"}></i>
-                    </span>
-                )
-            })}
-        </div>
-    )
-}
